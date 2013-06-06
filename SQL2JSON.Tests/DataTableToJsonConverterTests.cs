@@ -13,7 +13,7 @@ namespace SQL2JSON.Tests
     public class DataTableToJsonConverterTests
     {
         private DataTable dataTable;
-        private dynamic[] arrayOfObjects;
+        private Dictionary<string, object>[] arrayOfObjects;
         private string json;
         private DataTableToDynamicsConverter dataTableToObjectsConverter;
         private IJSONSerializer serializer;
@@ -22,7 +22,10 @@ namespace SQL2JSON.Tests
         public void SetUp()
         {
             dataTable = A.Fake<DataTable>();
-            arrayOfObjects = new dynamic[] { "object1", "object2" };
+            arrayOfObjects = new [] {
+                new Dictionary<string, object> { { "Id", 1 } }, 
+                new Dictionary<string, object> { { "Id", 2 } }, 
+            };
             json = "json";
             dataTableToObjectsConverter = A.Fake<DataTableToDynamicsConverter>();
             serializer = A.Fake<IJSONSerializer>();
@@ -44,11 +47,14 @@ namespace SQL2JSON.Tests
         [Test]
         public void Convert_DataTableWithCustomConverter_ReturnsJsonString()
         {
-            var transformedObjects = new dynamic[] { "super-object-1", "super-object-2" };
+            var transformedObjects = new [] {
+                new Dictionary<string, object> { { "TransformedId", 1 } }, 
+                new Dictionary<string, object> { { "TransformedId", 2 } }, 
+            };
             var transformer = A.Fake<ITransformer>();
 
-            A.CallTo(() => transformer.Transform("object1")).Returns("super-object-1");
-            A.CallTo(() => transformer.Transform("object2")).Returns("super-object-2");
+            A.CallTo(() => transformer.Transform(arrayOfObjects[0])).Returns(transformedObjects[0]);
+            A.CallTo(() => transformer.Transform(arrayOfObjects[1])).Returns(transformedObjects[1]);
             FakeCallToSerializer(transformedObjects).Returns(json);
 
             var result = MakeConverter().Convert(dataTable, transformer);

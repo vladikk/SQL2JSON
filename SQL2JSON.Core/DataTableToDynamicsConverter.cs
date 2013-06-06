@@ -1,36 +1,35 @@
 ﻿using System.Collections.Generic;
 using System.Data;
-using System.Dynamic;
 
 namespace SQL2JSON.Core
 {
     public class DataTableToDynamicsConverter
     {
-        public virtual dynamic[] Convert(DataTable source)
+        public virtual Dictionary<string, object>[] Convert(DataTable source)
         {
-            var result = new dynamic[source.Rows.Count];
+            var result = new Dictionary<string, object>[source.Rows.Count];
 
             for (int i = 0; i < source.Rows.Count; i++)
             {
                 var row = source.Rows[i];
-                var obj = ConvertRowToObject(row, i);
+                var obj = ConvertRowToDictionary(row, i);
                 result[i] = obj;
             }
 
             return result;
         }
 
-        private dynamic ConvertRowToObject(DataRow source, int i)
+        private Dictionary<string, object> ConvertRowToDictionary(DataRow source, int i)
         {
-            var obj = new ExpandoObject();
-            var dict = (IDictionary<string, object>) obj;
+            var dict = new Dictionary<string, object>();
 
             for (int j = 0; j < source.Table.Columns.Count; j++)
             {
                 var column = source.Table.Columns[j];
                 dict[column.ColumnName] = source[column.ColumnName];
             }
-            return obj;
+
+            return dict;
         }
     }
 }

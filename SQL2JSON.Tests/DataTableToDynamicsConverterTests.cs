@@ -39,17 +39,17 @@ namespace SQL2JSON.Tests
             var result = converter.Convert(dataTable);
 
             Assert.AreEqual(2, result.Length);
-            Assert.AreEqual(1, result[0].Id);
-            Assert.AreEqual("Hello, world", result[0].Title);
-            Assert.AreEqual(7.1, result[0].Value);
-            Assert.AreEqual(true, result[0].Active);
-            Assert.AreEqual(new DateTime(2013, 6, 6, 17, 15, 1, 2), result[0].CreatedOn);
+            Assert.AreEqual(1, result[0]["Id"]);
+            Assert.AreEqual("Hello, world", result[0]["Title"]);
+            Assert.AreEqual(7.1, result[0]["Value"]);
+            Assert.AreEqual(true, result[0]["Active"]);
+            Assert.AreEqual(new DateTime(2013, 6, 6, 17, 15, 1, 2), result[0]["CreatedOn"]);
 
-            Assert.AreEqual(2, result[1].Id);
-            Assert.AreEqual("Hello, world!", result[1].Title);
-            Assert.AreEqual(17.7, result[1].Value);
-            Assert.AreEqual(true, result[1].Active);
-            Assert.AreEqual(new DateTime(2012, 7, 7, 7, 15, 1, 2), result[1].CreatedOn);
+            Assert.AreEqual(2, result[1]["Id"]);
+            Assert.AreEqual("Hello, world!", result[1]["Title"]);
+            Assert.AreEqual(17.7, result[1]["Value"]);
+            Assert.AreEqual(true, result[1]["Active"]);
+            Assert.AreEqual(new DateTime(2012, 7, 7, 7, 15, 1, 2), result[1]["CreatedOn"]);
         }
     }
 }

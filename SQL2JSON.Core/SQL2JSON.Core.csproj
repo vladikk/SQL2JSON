@@ -45,6 +45,7 @@
     <Compile Include="IDataAccess.cs" />
     <Compile Include="IJSONSerializer.cs" />
     <Compile Include="ITransformer.cs" />
+    <Compile Include="ObjectTreeBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlToJsonConverter.cs" />
   </ItemGroup>

@@ -1,7 +1,9 @@
-﻿namespace SQL2JSON.Core
+﻿using System.Collections.Generic;
+
+namespace SQL2JSON.Core
 {
     public interface ITransformer
     {
-        object Transform(object obj);
+        IDictionary<string, object> Transform(IDictionary<string, object> obj);
     }
 }
