@@ -2,7 +2,7 @@
 
 namespace SQL2JSON.Core
 {
-    public interface IDatabase
+    public interface IDataAccess
     {
         DataTable Query(string sql);
     }
