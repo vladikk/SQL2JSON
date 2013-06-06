@@ -18,14 +18,22 @@ namespace SQL2JSON.Core
 
         public string Convert(DataTable source)
         {
-            return Convert(source, x => x);
+            return Convert(source, new NoTransformation());
         }
 
-        public string Convert(DataTable source, Func<object, object> transformer)
+        public string Convert(DataTable source, ITransformer transformer)
         {
             var objects = DataTableToObjectsConverter.Convert(source);
-            var transformedObjects = objects.Select(x => transformer(x)).ToArray();
+            var transformedObjects = objects.Select(x => transformer.Transform(x)).ToArray();
             return serializer.Serialize(transformedObjects);
+        }
+
+        public class NoTransformation : ITransformer
+        {
+            public object Transform(object obj)
+            {
+                return obj;
+            }
         }
     }
 }

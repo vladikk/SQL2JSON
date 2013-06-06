@@ -45,10 +45,10 @@ namespace SQL2JSON.Tests
         public void Convert_DataTableWithCustomConverter_ReturnsJsonString()
         {
             var transformedObjects = new dynamic[] { "super-object-1", "super-object-2" };
-            var transformer = A.Fake<Func<object, object>>();
+            var transformer = A.Fake<ITransformer>();
 
-            A.CallTo(() => transformer.Invoke("object1")).Returns("super-object-1");
-            A.CallTo(() => transformer.Invoke("object2")).Returns("super-object-2");
+            A.CallTo(() => transformer.Transform("object1")).Returns("super-object-1");
+            A.CallTo(() => transformer.Transform("object2")).Returns("super-object-2");
             FakeCallToSerializer(transformedObjects).Returns(json);
 
             var result = MakeConverter().Convert(dataTable, transformer);
