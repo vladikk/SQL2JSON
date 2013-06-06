@@ -4,6 +4,6 @@ namespace SQL2JSON.Core
 {
     public interface IDataAccess
     {
-        DataTable Query(string sql);
+        DataTable ExecuteQuery(string sql);
     }
 }

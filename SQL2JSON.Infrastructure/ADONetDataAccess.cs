@@ -13,7 +13,7 @@ namespace SQL2JSON.Infrastructure
             this.connectionString = connectionString;
         }
 
-        public DataTable Query(string sql)
+        public DataTable ExecuteQuery(string sql)
         {
             var result = new DataTable();
             var conn = new SqlConnection(connectionString);

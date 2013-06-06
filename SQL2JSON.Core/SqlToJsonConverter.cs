@@ -13,7 +13,7 @@
 
         public string ConvertQuery(string sql)
         {
-            var dataTable = dataAccess.Query(sql);
+            var dataTable = dataAccess.ExecuteQuery(sql);
             return DataTableToJsonConverter.Convert(dataTable);
         }
     }
