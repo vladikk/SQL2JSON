@@ -1,4 +1,5 @@
-﻿using SQL2JSON.Core;
+﻿using System.IO;
+using SQL2JSON.Core;
 using SQL2JSON.Infrastructure;
 
 namespace SQL2JSON
@@ -14,7 +15,7 @@ namespace SQL2JSON
             var converter = new SqlToJsonConverter(new ADONetDataAccess(connectionString), new JsonDotNetSerializer());
             
             var json = converter.ConvertQuery(query);
-            System.IO.File.WriteAllText(outputFile, json);
+            File.WriteAllText(outputFile, json);
         }
     }
 }
