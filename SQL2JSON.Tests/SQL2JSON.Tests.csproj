@@ -49,6 +49,7 @@
     <Compile Include="DataTableToDynamicsConverterTests.cs" />
     <Compile Include="DataTableToJsonConverterTests.cs" />
     <Compile Include="JsonDotNetSerializerTests.cs" />
+    <Compile Include="ObjectTreeBuilderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
