@@ -1,7 +1,7 @@
 SQL2JSON
 ========
 
-SQL2JSON is a command line utility that captures sql query execution result as a json file.
+SQL2JSON is a Apache2 Licensed command line utility that captures execution of a sql query to a json file.
 
 Requirements
 ------------
