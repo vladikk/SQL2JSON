@@ -11,7 +11,7 @@ namespace SQL2JSON.Infrastructure
     {
         public string Serialize(object obj)
         {
-            return JsonConvert.SerializeObject(obj);
+            return JsonConvert.SerializeObject(obj, Formatting.Indented);
         }
     }
 }
