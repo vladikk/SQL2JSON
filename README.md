@@ -23,7 +23,8 @@ Suppose you have a table called "users" with the following records:
 
 sql2json.exe -cs="Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;" -sql="select * from users" -output="users.json"
 
-*users.json*
+**users.json**
+
     [
     	{ "user_id": 1, "first_name": "john", "last_name": "johnson"},
     	{ "user_id": 2, "first_name": "scott", "last_name": "scottson"},
@@ -35,7 +36,7 @@ This example demonstrates the use of delimiters to build a json string containin
 
 sql2json.exe -cs="Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;" -sql="select user_id, first_name as 'name::first', last_name as 'name::last' from users" -output="users.json"
 
-*users.json*
+**users.json**
 
     [
     	{
@@ -50,4 +51,4 @@ sql2json.exe -cs="Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;" -
     		"user_id": 3,
     		"name": { "first": "paul", "last": "paulson" }
     	}
-]    
+    ]
