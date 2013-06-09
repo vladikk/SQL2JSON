@@ -1,4 +1,6 @@
-﻿namespace SQL2JSON.Core
+﻿using System.IO;
+
+namespace SQL2JSON.Core
 {
     public class SqlToJsonConverter
     {
@@ -17,6 +19,12 @@
         {
             var dataTable = dataAccess.ExecuteQuery(sql);
             return DataTableToJsonConverter.Convert(dataTable, transformer);
+        }
+
+        public void ConvertQuery(string sql, StreamWriter writer)
+        {
+            var dataTable = dataAccess.ExecuteQuery(sql);
+            DataTableToJsonConverter.Convert(dataTable, transformer, writer);
         }
     }
 }

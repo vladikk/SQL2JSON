@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 
 namespace SQL2JSON.Core
@@ -28,6 +29,14 @@ namespace SQL2JSON.Core
             var objects = DataTableToObjectsConverter.Convert(source);
             var transformedObjects = objects.Select(transformer.Transform).ToArray();
             return serializer.Serialize(transformedObjects);
+        }
+
+        public void Convert(DataTable source, ITransformer transformer, StreamWriter writer)
+        {
+            transformer = transformer ?? new NoTransformation();
+            var objects = DataTableToObjectsConverter.Convert(source);
+            var transformedObjects = objects.Select(transformer.Transform).ToArray();
+            serializer.Serialize(transformedObjects, writer);
         }
 
         public class NoTransformation : ITransformer

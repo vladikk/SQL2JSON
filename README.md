@@ -21,7 +21,7 @@ Suppose you have a table called "users" with the following records:
 
 ### Example #1 - Simplest Case
 
-sql2json.exe -cs="Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;" -sql="select * from users" -output="users.json"
+    sql2json.exe -cs="Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;" -sql="select * from users" -output="users.json"
 
 **users.json:**
 
@@ -34,7 +34,7 @@ sql2json.exe -cs="Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;" -
 ### Example #2 - Nested Objects
 This example demonstrates the use of delimiters to build a json string containing nested objects
 
-sql2json.exe -cs="Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;" -sql="select user_id, first_name as 'name::first', last_name as 'name::last' from users" -output="users.json"
+    sql2json.exe -cs="Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;" -sql="select user_id, first_name as 'name::first', last_name as 'name::last' from users" -output="users.json"
 
 **users.json:**
 
@@ -52,3 +52,8 @@ sql2json.exe -cs="Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;" -
     		"name": { "first": "paul", "last": "paulson" }
     	}
     ]
+
+Advanced Scenarios
+------------------
+
+If you need include calculations or aggregations in your JSON objects you can either precalculate them in your sql query, or if you are more adventurous, you can write your own implementation of ITransformer to execute the required logic.

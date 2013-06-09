@@ -69,8 +69,11 @@ namespace SQL2JSON
         {
             var transformer = !string.IsNullOrEmpty(args.Delimeter) ? new ObjectGraphTransformer(args.Delimeter) : null;
             var converter = new SqlToJsonConverter(new ADONetDataAccess(args.ConnectionString), new JsonDotNetSerializer(), transformer);
-            var json = converter.ConvertQuery(args.SQL);
-            File.WriteAllText(args.OutputFilePath, json);
+            using (var fs = File.Open(args.OutputFilePath, FileMode.Create))
+            using (var streamWriter = new StreamWriter(fs))
+            {
+                converter.ConvertQuery(args.SQL, streamWriter);
+            }
         }
     }
 }
