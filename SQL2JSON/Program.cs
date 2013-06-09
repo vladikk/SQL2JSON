@@ -59,10 +59,10 @@ namespace SQL2JSON
             argsParser.WriteOptionDescriptions(Console.Out);
             Console.WriteLine();
             Console.WriteLine("Example #1:");
-            Console.WriteLine("sql2json.exe -cs=\"Data Source=.\\MSSQL2008;Initial Catalog=DB1;User Id=usr;Password=pwd;\" -sql=\"select * from users\" -output=\"c:\\temp\\users.json\"");
+            Console.WriteLine("sql2json.exe -cs=\"Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;\" -sql=\"select * from users\" -output=\"c:\\temp\\users.json\"");
             Console.WriteLine();
             Console.WriteLine("Example #2:");
-            Console.WriteLine("sql2json.exe -cs=\"Data Source=.\\MSSQL2008;Initial Catalog=DB1;User Id=usr;Password=pwd;\" -sql=\"select user_id, first_name as 'name::first', last_name as 'name::last' from users\" -output=\"c:\\temp\\users.json\"");
+            Console.WriteLine("sql2json.exe -cs=\"Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;\" -sql=\"select user_id, first_name as 'name::first', last_name as 'name::last' from users\" -output=\"c:\\temp\\users.json\"");
         }
 
         static void Execute(ArgsParser args)
