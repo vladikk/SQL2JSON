@@ -56,13 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SQL2JSON.Core\SQL2JSON.Core.csproj">
-      <Project>{8A1ABAA5-97A3-47DC-8F8A-CF75FF476673}</Project>
-      <Name>SQL2JSON.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQL2JSON.Infrastructure\SQL2JSON.Infrastructure.csproj">
-      <Project>{2FEEE120-4F41-4871-A7D6-E6EFCC11F321}</Project>
-      <Name>SQL2JSON.Infrastructure</Name>
+    <ProjectReference Include="..\SQL2JSON\SQL2JSON.csproj">
+      <Project>{CACACC0F-FD4D-4EE7-B1E8-0374ECECDD0D}</Project>
+      <Name>SQL2JSON</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

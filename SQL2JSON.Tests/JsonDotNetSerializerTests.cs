@@ -20,7 +20,7 @@ namespace SQL2JSON.Tests
 
             var result = new JsonDotNetSerializer().Serialize(data);
 
-            Assert.AreEqual("{\"Id\":1,\"Title\":\"Hello, world\",\"Value\":7.17,\"CreatedOn\":\"2013-06-06T17:15:01.002\"}", result);
+            Assert.AreEqual("{\r\n  \"Id\": 1,\r\n  \"Title\": \"Hello, world\",\r\n  \"Value\": 7.17,\r\n  \"CreatedOn\": \"2013-06-06T17:15:01.002\"\r\n}", result);
         }
     }
 }

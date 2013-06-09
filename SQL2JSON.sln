@@ -1,11 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL2JSON.Core", "SQL2JSON.Core\SQL2JSON.Core.csproj", "{8A1ABAA5-97A3-47DC-8F8A-CF75FF476673}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL2JSON.Tests", "SQL2JSON.Tests\SQL2JSON.Tests.csproj", "{4C5EC68D-A414-4051-8DDD-781D6038B4C0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL2JSON.Infrastructure", "SQL2JSON.Infrastructure\SQL2JSON.Infrastructure.csproj", "{2FEEE120-4F41-4871-A7D6-E6EFCC11F321}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL2JSON", "SQL2JSON\SQL2JSON.csproj", "{CACACC0F-FD4D-4EE7-B1E8-0374ECECDD0D}"
 EndProject
@@ -19,16 +15,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8A1ABAA5-97A3-47DC-8F8A-CF75FF476673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A1ABAA5-97A3-47DC-8F8A-CF75FF476673}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A1ABAA5-97A3-47DC-8F8A-CF75FF476673}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{8A1ABAA5-97A3-47DC-8F8A-CF75FF476673}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{8A1ABAA5-97A3-47DC-8F8A-CF75FF476673}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{8A1ABAA5-97A3-47DC-8F8A-CF75FF476673}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A1ABAA5-97A3-47DC-8F8A-CF75FF476673}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A1ABAA5-97A3-47DC-8F8A-CF75FF476673}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{8A1ABAA5-97A3-47DC-8F8A-CF75FF476673}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{8A1ABAA5-97A3-47DC-8F8A-CF75FF476673}.Release|x86.ActiveCfg = Release|Any CPU
 		{4C5EC68D-A414-4051-8DDD-781D6038B4C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4C5EC68D-A414-4051-8DDD-781D6038B4C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C5EC68D-A414-4051-8DDD-781D6038B4C0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -39,16 +25,6 @@ Global
 		{4C5EC68D-A414-4051-8DDD-781D6038B4C0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{4C5EC68D-A414-4051-8DDD-781D6038B4C0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{4C5EC68D-A414-4051-8DDD-781D6038B4C0}.Release|x86.ActiveCfg = Release|Any CPU
-		{2FEEE120-4F41-4871-A7D6-E6EFCC11F321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FEEE120-4F41-4871-A7D6-E6EFCC11F321}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FEEE120-4F41-4871-A7D6-E6EFCC11F321}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{2FEEE120-4F41-4871-A7D6-E6EFCC11F321}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{2FEEE120-4F41-4871-A7D6-E6EFCC11F321}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{2FEEE120-4F41-4871-A7D6-E6EFCC11F321}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FEEE120-4F41-4871-A7D6-E6EFCC11F321}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2FEEE120-4F41-4871-A7D6-E6EFCC11F321}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{2FEEE120-4F41-4871-A7D6-E6EFCC11F321}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{2FEEE120-4F41-4871-A7D6-E6EFCC11F321}.Release|x86.ActiveCfg = Release|Any CPU
 		{CACACC0F-FD4D-4EE7-B1E8-0374ECECDD0D}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{CACACC0F-FD4D-4EE7-B1E8-0374ECECDD0D}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{CACACC0F-FD4D-4EE7-B1E8-0374ECECDD0D}.Debug|Mixed Platforms.Build.0 = Debug|x86
