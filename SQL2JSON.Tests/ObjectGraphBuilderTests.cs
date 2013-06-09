@@ -5,7 +5,7 @@ using SQL2JSON.Core;
 namespace SQL2JSON.Tests
 {
     [TestFixture]
-    public class ObjectTreeBuilderTests
+    public class ObjectGraphBuilderTests
     {
         [Test]
         public void Split_OneNestedObject_BuildsCorrectResult()
@@ -15,7 +15,7 @@ namespace SQL2JSON.Tests
             objDict["value::id"] = 1;
             objDict["value::name"] = "john johnson";
 
-            var treeBuilder = new ObjectTreeBuilder();
+            var treeBuilder = new ObjectGraphBuilder();
             var splittedObject = treeBuilder.Split(objDict, "::");
             
             Assert.AreEqual("abcd", splittedObject["key"]);
@@ -32,7 +32,7 @@ namespace SQL2JSON.Tests
             objDict["value::name::first"] = "john";
             objDict["value::name::last"] = "johnson";
 
-            var treeBuilder = new ObjectTreeBuilder();
+            var treeBuilder = new ObjectGraphBuilder();
             var splittedObject = treeBuilder.Split(objDict, "::");
 
             Assert.AreEqual("abcd", splittedObject["key"]);

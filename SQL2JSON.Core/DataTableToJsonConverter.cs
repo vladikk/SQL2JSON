@@ -24,6 +24,7 @@ namespace SQL2JSON.Core
 
         public string Convert(DataTable source, ITransformer transformer)
         {
+            transformer = transformer ?? new NoTransformation();
             var objects = DataTableToObjectsConverter.Convert(source);
             var transformedObjects = objects.Select(transformer.Transform).ToArray();
             return serializer.Serialize(transformedObjects);
