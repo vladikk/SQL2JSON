@@ -5,7 +5,7 @@ SQL2JSON is a command line utility that captures sql query execution result as a
 
 Requirements
 ------------
-SQL2JSON is a .NET based application and requires .NET v4 framework.
+SQL2JSON requires .NET v4.0 framework.
 
 Usage
 -----
@@ -23,7 +23,7 @@ Suppose you have a table called "users" with the following records:
 
 sql2json.exe -cs="Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;" -sql="select * from users" -output="users.json"
 
-**users.json**
+**users.json:**
 
     [
     	{ "user_id": 1, "first_name": "john", "last_name": "johnson"},
@@ -36,7 +36,7 @@ This example demonstrates the use of delimiters to build a json string containin
 
 sql2json.exe -cs="Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;" -sql="select user_id, first_name as 'name::first', last_name as 'name::last' from users" -output="users.json"
 
-**users.json**
+**users.json:**
 
     [
     	{
