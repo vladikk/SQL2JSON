@@ -36,6 +36,7 @@ This example demonstrates the use of delimiters to build a json string containin
 sql2json.exe -cs="Data Source=.;Initial Catalog=DB1;User Id=usr;Password=pwd;" -sql="select user_id, first_name as 'name::first', last_name as 'name::last' from users" -output="users.json"
 
 *users.json*
+
     [
     	{
     		"user_id": 1,
