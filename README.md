@@ -12,10 +12,11 @@ Usage
 
 Suppose you have a table called "users" with the following records:
 
-> *user_id*	*first_name*	*last_name*
-> 1			john			johnson
-> 2			scott			scottson
-> 3			paul			paulson
+|user_id|first_name|last_name |
+|-------|----------|----------|
+|1      |john      |johnson   |
+|2      |scott     |scottson  |
+|3      |paul      |paulson   |
 
 
 ### Example #1 - Simplest Case
